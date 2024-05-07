@@ -11,7 +11,7 @@ const Todolist = () => {
     setInput('');
   };
   const onClickDelete = (index: number) => {
-    const newTodo = todo.filter((_: any, i: number) => i !== index);
+    const newTodo = todo.filter((_: string, i: number) => i !== index);
     setTodo(newTodo);
     console.log('xoa thanh cong');
   };
