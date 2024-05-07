@@ -1,0 +1,23 @@
+========== TRAINING REACTJS VSII ========== 
+Các hooks cơ bản được sử dụng:
+    1. useState
+    2. useEffect
+    3. useContext
+    4. useReducer
+
+callback
+memo
+ref
+
+side Effect?
+
+--- 1. useState
+
+
+--- 2. useEffect
+làm một trong những API quan trọng của React Hook
+
+
+--- 3. useContext
+cho phép truy cập và sử dụng giá trị đưuọc chia sẻ từ một Provider component đến các 
+component
