@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const Validate = () => {
-  const [value, setValue] = useState<any>('');
+  const [value, setValue] = useState<string>('');
   const [error, setError] = useState<any>(null);
   const [success, setSuccess] = useState<any>(null);
 
