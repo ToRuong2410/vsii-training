@@ -1,3 +1,4 @@
+import HookForm from './Components/HookForm';
 import ImageUpload from './Components/ImageUpload';
 import Todolist from './Components/Todolist';
 import Validate from './Components/Validate';
@@ -8,10 +9,16 @@ function App() {
   return (
     <div>
       {/* <h1>Nguyễn Quang Trường</h1> */}
+
       {/* <Todolist /> */}
+
       {/* <Validate /> */}
-      <MultiDropdownMenu />
+
+      {/* <MultiDropdownMenu /> */}
+
       {/* <ImageUpload /> */}
+
+      <HookForm />
     </div>
   );
 }
