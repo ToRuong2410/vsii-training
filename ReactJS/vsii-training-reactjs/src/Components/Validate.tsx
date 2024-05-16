@@ -25,7 +25,7 @@ const Validate = () => {
 
   return (
     <div className="q1">
-      <h2>Bài 1</h2>
+      <h2>Validate</h2>
       <p>Nhập vào 1 số bất kỳ</p>
       <input
         type="text"

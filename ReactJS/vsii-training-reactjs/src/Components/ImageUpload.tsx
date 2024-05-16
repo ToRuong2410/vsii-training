@@ -27,6 +27,7 @@ const ImageUpload = () => {
 
   return (
     <div>
+      <h2>---Upload File---</h2>
       <Form.Group
         controlId="formFileLg"
         className="mb-3"
