@@ -1,6 +1,7 @@
-import { Form } from 'react-bootstrap';
+import { Alert, Form } from 'react-bootstrap';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import Button from 'react-bootstrap/Button';
+import { useState } from 'react';
 
 type Inputs = {
   name: string;
@@ -10,6 +11,8 @@ type Inputs = {
 };
 
 function ReactHookForm() {
+  const [showAlert, setShowAlert] = useState<boolean>(false);
+
   const {
     register,
     handleSubmit,
@@ -21,6 +24,10 @@ function ReactHookForm() {
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     console.log(data);
     reset();
+    setShowAlert(true);
+    setTimeout(() => {
+      setShowAlert(false);
+    }, 2000);
   };
 
   // Logic xử lý validate dữ liệu
@@ -51,7 +58,7 @@ function ReactHookForm() {
       {/* Name */}
       <Form className="container w-50" onSubmit={handleSubmit(onSubmit)}>
         <Form.Group className="mb-2" controlId="formBasicName">
-          <Form.Label as={'b'}>Tên</Form.Label>
+          <Form.Label as={'b'}>Họ tên</Form.Label>
           <Form.Control
             type="text"
             placeholder="Nhập tên"
@@ -94,6 +101,16 @@ function ReactHookForm() {
           </Button>
         </div>
       </Form>
+
+      {showAlert && (
+        <div
+          className="alert alert-success fixed-top mt-3 mx-auto"
+          role="alert"
+          style={{ width: '50%' }}
+        >
+          Biểu mẫu đã được gửi thành công!
+        </div>
+      )}
     </>
   );
 }

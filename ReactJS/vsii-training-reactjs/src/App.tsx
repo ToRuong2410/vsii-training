@@ -9,8 +9,6 @@ import MultiDropdownMenu from './Container/MultiDropdownMenu';
 function App() {
   return (
     <div>
-      <h1>Nguyễn Quang Trường</h1>
-
       <ReactHookForm />
     </div>
   );
