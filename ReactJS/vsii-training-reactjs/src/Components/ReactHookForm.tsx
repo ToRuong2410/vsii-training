@@ -1,16 +1,15 @@
-import { Alert, Form } from 'react-bootstrap';
-import { SubmitHandler, useForm } from 'react-hook-form';
-import Button from 'react-bootstrap/Button';
-import { useState } from 'react';
+// ReactHookForm.tsx
+import React, { useState } from 'react';
+import { useForm, SubmitHandler } from 'react-hook-form';
+import { Form, Button } from 'react-bootstrap';
 
-type Inputs = {
+interface Inputs {
   name: string;
   email: string;
   age: number;
-  message: string;
-};
+}
 
-function ReactHookForm() {
+const ReactHookForm: React.FC = () => {
   const [showAlert, setShowAlert] = useState<boolean>(false);
 
   const {
@@ -20,7 +19,7 @@ function ReactHookForm() {
     reset
   } = useForm<Inputs>();
 
-  //   In ra dữ liệu và reset lại các trường dữ liệu
+  // In ra dữ liệu và reset lại các trường dữ liệu
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     console.log(data);
     reset();
@@ -113,6 +112,6 @@ function ReactHookForm() {
       )}
     </>
   );
-}
+};
 
 export default ReactHookForm;
