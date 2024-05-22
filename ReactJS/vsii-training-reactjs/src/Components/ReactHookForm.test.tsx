@@ -5,6 +5,7 @@ import ReactHookForm from './ReactHookForm';
 import userEvent from '@testing-library/user-event';
 
 describe('ReactHookForm', () => {
+  //================================================================
   test('renders the form correctly', () => {
     //Render component để có thể kiểm tra nó.
     render(<ReactHookForm />);
@@ -16,6 +17,7 @@ describe('ReactHookForm', () => {
     expect(screen.getByPlaceholderText('Nhập tuổi')).toBeInTheDocument();
   });
 
+  //================================================================
   test('shows validation errors when submitted with empty or invalid data', async () => {
     //Render component để có thể kiểm tra nó.
     render(<ReactHookForm />);
@@ -29,14 +31,15 @@ describe('ReactHookForm', () => {
     expect(await screen.findByText('Yêu cầu nhập email')).toBeInTheDocument();
     expect(await screen.findByText('Yêu cầu nhập tuổi')).toBeInTheDocument();
 
+    // Mô tả sự kiện người dùng nhập dữ liệu
     fireEvent.change(screen.getByPlaceholderText('Nhập tên'), {
       target: { value: 'number 1' }
     });
     fireEvent.change(screen.getByPlaceholderText('Nhập email'), {
-      target: { value: 'invalid-email' }
+      target: { value: 'email.com' }
     });
     fireEvent.change(screen.getByPlaceholderText('Nhập tuổi'), {
-      target: { value: '17' }
+      target: { value: '7' }
     });
 
     // Mô tả sự kiện người dùng click vào nút Đăng ký
@@ -55,6 +58,7 @@ describe('ReactHookForm', () => {
     ).toBeInTheDocument();
   });
 
+  //================================================================
   test('submits the form correctly when valid data is provided', async () => {
     render(<ReactHookForm />);
 
