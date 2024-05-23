@@ -31,13 +31,13 @@ interface Breed {
 
 interface BreedsState {
   breeds: Breed[];
-  status: "idle" | "loading" | "succeeded" | "failed";
+  loading: "idle" | "pending" | "succeeded" | "failed";
   error: string | null;
 }
 
 const initialState: BreedsState = {
   breeds: [],
-  status: "idle",
+  loading: "idle",
   error: null,
 };
 
@@ -58,14 +58,14 @@ const breedsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchBreeds.pending, (state) => {
-        state.status = "loading";
+        state.loading = "pending";
       })
       .addCase(fetchBreeds.fulfilled, (state, action) => {
-        state.status = "succeeded";
+        state.loading = "succeeded";
         state.breeds = action.payload;
       })
       .addCase(fetchBreeds.rejected, (state, action) => {
-        state.status = "failed";
+        state.loading = "failed";
         state.error = action.error.message || "Somthing went wrong";
       });
   },

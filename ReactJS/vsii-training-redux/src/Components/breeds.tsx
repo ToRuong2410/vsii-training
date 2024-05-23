@@ -6,7 +6,7 @@ import { RootState, AppDispatch } from "../Store/rootReducer";
 const Breeds: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const breeds = useSelector((state: RootState) => state.breeds.breeds);
-  const status = useSelector((state: RootState) => state.breeds.status);
+  const status = useSelector((state: RootState) => state.breeds.loading);
   const error = useSelector((state: RootState) => state.breeds.error);
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const Breeds: React.FC = () => {
   return (
     <div className="container">
       <h1>Dog Breeds</h1>
-      {status === "loading" && <p>Loading...</p>}
+      {status === "pending" && <p>Loading...</p>}
       {status === "failed" && <p>Error: {error}</p>}
       {status === "succeeded" && (
         <ul>
