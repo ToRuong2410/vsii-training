@@ -1,10 +1,14 @@
-import "./App.css";
+import Breeds from "./Components/breeds";
 import Counter from "./Components/counter";
+import ToDoList from "./Components/todolist";
 
 function App() {
   return (
     <div>
-      <Counter />
+      {/* <Counter />
+      <ToDoList /> */}
+
+      <Breeds />
     </div>
   );
 }
